@@ -10,7 +10,7 @@ add_tcp_ports_from_dockerfile() {
   local APP="$1"
 
   local RAW_TCP_PORTS="$(get_app_raw_tcp_ports "$APP")"
-  local PROXY_PORT_MAP="$(get_app_proxy_port_map "$APP")"
+  local PROXY_PORT_MAP="$DOKKU_PROXY_PORT_MAP"
 
   if [[ -n "$RAW_TCP_PORTS" ]]; then
     local RAW_TCP_PORT
